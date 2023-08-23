@@ -32,7 +32,7 @@ cd crawlers
 
 ```bash
 make run
-python main.py --subs tumblr;brazil
+python main.py --subs "tumblr;brazil"
 ```
 
 Documentation:
