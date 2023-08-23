@@ -1,7 +1,7 @@
 import argparse
 from pprint import pprint
 
-from client import Client
+from client.client import Client
 from scrapper.RedditScrapper import RedditScrapper
 from utils import base_url
 
