@@ -1,14 +1,13 @@
-NAME=reddit-scrapper
-; := ;
+NAME=crawlers-challenge
 
 .check-image-exists:
 ifeq ($(shell docker images -q ${NAME}),)
-	@docker build -t ${NAME} .
+	@docker build -t ${NAME} . --no-cache
 endif
 
 .check-container-running:
 ifeq ($(shell docker ps | grep ${NAME}),)
-	@docker run --name ${NAME} --rm -d -it -v $(shell pwd):/app -p 8080:8080 ${NAME}
+	@docker run --name ${NAME} -d ${NAME}
 endif
 
 run: .check-image-exists .check-container-running
